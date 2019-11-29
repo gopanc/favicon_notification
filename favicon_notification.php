@@ -54,6 +54,10 @@ class Favicon_notification extends Module
     public function install()
     {
         Configuration::updateValue('FAVICON_NOTIFICATION_POSITION', "down");
+        Configuration::updateValue('FAVICON_NOTIFICATION_SHAPE', "circle");
+        Configuration::updateValue('FAVICON_NOTIFICATION_ANIMATION', "slide");
+        Configuration::updateValue('FAVICON_NOTIFICATION_BACKGROUND_COLOR', "#ff0000");
+        Configuration::updateValue('FAVICON_NOTIFICATION_TEXT_COLOR', "#FFFFFF");
 
         return parent::install() &&
             $this->registerHook('header') &&
@@ -63,6 +67,10 @@ class Favicon_notification extends Module
     public function uninstall()
     {
         Configuration::deleteByName('FAVICON_NOTIFICATION_POSITION');
+        Configuration::deleteByName('FAVICON_NOTIFICATION_SHAPE');
+        Configuration::deleteByName('FAVICON_NOTIFICATION_ANIMATION');
+        Configuration::deleteByName('FAVICON_NOTIFICATION_BACKGROUND_COLOR');
+        Configuration::deleteByName('FAVICON_NOTIFICATION_TEXT_COLOR');
 
         return parent::uninstall();
     }
