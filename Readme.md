@@ -1,4 +1,5 @@
 # Favicon Notification
+With this module you can display the number of products in cart in the browser tab Favicon.
 
 # Compatibility
 Prestashop 1.7
